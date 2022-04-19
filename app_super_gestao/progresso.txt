@@ -1,0 +1,1 @@
+section6[avançando com rotas]: #31 -> Enviando parâmetros
