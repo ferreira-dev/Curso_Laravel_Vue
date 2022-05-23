@@ -1,1 +1,2 @@
-section6[avançando com rotas]: #31 -> Enviando parâmetros
+[SECTION6 - avançando com rotas] : 
+    #33 -> Tratando parâmetros de rotas com expressões regulares (2min)
