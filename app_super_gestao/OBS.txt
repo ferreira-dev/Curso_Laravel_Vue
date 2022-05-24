@@ -1,2 +1,2 @@
 - parei na
-    SEÇÃO6 [avançando com rotas] -> 38 - Redirecionamento de rotas
+    SEÇÃO6 [avançando com rotas] -> 39 - Rota de contigência (fallback)
