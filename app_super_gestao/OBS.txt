@@ -1,2 +1,2 @@
 - parei na
-    SEÇÃO6 [avançando com rotas] -> 41 - Parâmetros do controlador pra view 
+    SEÇÃO_7: [avançando com controllers] -> 51 - Blade @switch/case
