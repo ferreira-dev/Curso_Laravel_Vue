@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Teste</h1>
+    <div id="app">
+       String:              {{ string }} <br>
+       Número:              {{ numero }} <br>
+       Booleano:            {{ booleano }} <br>
+       Array:               {{ array }} <br>
+       Outro_objeto:        {{ outro_objeto.nome }} <br>
+       Array de objetos:    {{ outro_objeto.array_de_objetos[0] }} <br>
+    </div>
+
+
+
+
+
+    <script src="./vue.js"></script>
+    <script>
+
+        options = {
+            el: '#app',
+            data: { //variáveis/atributos reativos que serão manipulados pelo vue, (binding)
+                string: 'Primeiro template controlado pelo Vue',
+                numero: 150,
+                booleano: true,
+                array: [
+                    'itens1',
+                    'itens2',
+                    'itens3'
+                ],
+                outro_objeto: {
+                    nome: 'fulano',
+                    site: 'url.com',
+                    idade: 27,
+                    array_de_objetos: [
+                        {curso: 'Laravel', cargaHoraria: '50h'},
+                        {curso: 'VueJs', cargaHoraria: '40h'}
+                    ]
+                }
+            }
+        }
+
+        const vm = new Vue(options) //vm = VueModel
+    </script>
+</body>
+</html>
