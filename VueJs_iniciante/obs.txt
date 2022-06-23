@@ -1,2 +1,2 @@
-versão do curso: 2.6.12
-parei na aula: [252] - explorando um pouco mais da propriedade data
+versão Vue do curso: 2.6.12
+parei na aula: [254] -> Recuperando atributos do data

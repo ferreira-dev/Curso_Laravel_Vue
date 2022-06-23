@@ -9,40 +9,31 @@
 <body>
     <h1>Teste</h1>
     <div id="app">
-       String:              {{ string }} <br>
-       Número:              {{ numero }} <br>
-       Booleano:            {{ booleano }} <br>
-       Array:               {{ array }} <br>
-       Outro_objeto:        {{ outro_objeto.nome }} <br>
-       Array de objetos:    {{ outro_objeto.array_de_objetos[0] }} <br>
+        {{ somar() }} <br>
+        {{ subtrair() }} <br>
+        {{ multiplicar() }} <br>
+        {{ dividir() }} <br>
+
     </div>
-
-
-
-
 
     <script src="./vue.js"></script>
     <script>
 
         options = {
             el: '#app',
-            data: { //variáveis/atributos reativos que serão manipulados pelo vue, (binding)
-                string: 'Primeiro template controlado pelo Vue',
-                numero: 150,
-                booleano: true,
-                array: [
-                    'itens1',
-                    'itens2',
-                    'itens3'
-                ],
-                outro_objeto: {
-                    nome: 'fulano',
-                    site: 'url.com',
-                    idade: 27,
-                    array_de_objetos: [
-                        {curso: 'Laravel', cargaHoraria: '50h'},
-                        {curso: 'VueJs', cargaHoraria: '40h'}
-                    ]
+            data: {},
+            methods: { 
+                somar: function somar() { // function convencional
+                    return 4 + 2;
+                },
+                subtrair: function() {
+                    return 4 - 2;
+                },
+                multiplicar: () => { // arrow function
+                    return 4 * 2;
+                },
+                dividir() { //forma enxuta de criar function
+                    return 4 / 2;
                 }
             }
         }
