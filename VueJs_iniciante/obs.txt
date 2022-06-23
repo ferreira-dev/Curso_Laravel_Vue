@@ -1,5 +1,5 @@
 versão Vue do curso: 2.6.12
-parei na aula: [256] -> Diretiva V-Bind : Realizando bind de atributos de tags HTML
+parei na aula: [258] -> Expressões no data binding
 
 
 ________________________notas:

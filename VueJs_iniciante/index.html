@@ -7,13 +7,21 @@
     <title>Document</title>
 </head>
 <body>
+    <style>
+        .verde {
+            background-color: green;
+            
+        }
+
+        .azul {
+            background-color: blue;
+        }
+
+    </style>
     <h1>Teste</h1>
     <div id="app">
-        {{ somar() }} <br>
-        {{ subtrair() }} <br>
-        {{ multiplicar() }} <br>
-        {{ dividir() }} <br>
-
+        {{ mensagem }}
+        <input :value="2+2" :class="teste ? 'verde' : estilo ">
     </div>
 
     <script src="./vue.js"></script>
@@ -22,25 +30,11 @@
         options = {
             el: '#app',
             data: {
-                n1: 8,
-                n2: 2,
-                somar: 'teste' //vai dar conflito de nome pois já existe uma function com esse nome.
+                mensagem: 'Expressão',
+                estilo: 'azul',
+                teste: true
             },
-            methods: { 
-                somar: function somar() { // function convencional
-                    return this.n1 + this.n2;
-                },
-                subtrair: function() {
-                    return this.n1 - this.n2;
-
-                },
-                multiplicar: () => { //  arrow function
-                    return this.n1 * this.n2; //contexto léxico
-                },
-                dividir() { //forma enxuta de criar function
-                    return this.n1 / this.n2;
-                }
-            }
+            methods: {}
         }
 
         const vm = new Vue(options) //vm = VueModel
