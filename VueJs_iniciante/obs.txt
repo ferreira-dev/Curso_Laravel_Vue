@@ -1,2 +1,8 @@
 versão Vue do curso: 2.6.12
-parei na aula: [254] -> Recuperando atributos do data
+parei na aula: [256] -> Diretiva V-Bind : Realizando bind de atributos de tags HTML
+
+
+________________________notas:
+
+. arrow functions não são indicadas pra criação de métodos de objetos, 
+    pois o (this) dentro delas, aponta pra (window) - contexto global ou para o escopo de função

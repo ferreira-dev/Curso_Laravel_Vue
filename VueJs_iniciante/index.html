@@ -21,19 +21,24 @@
 
         options = {
             el: '#app',
-            data: {},
+            data: {
+                n1: 8,
+                n2: 2,
+                somar: 'teste' //vai dar conflito de nome pois já existe uma function com esse nome.
+            },
             methods: { 
                 somar: function somar() { // function convencional
-                    return 4 + 2;
+                    return this.n1 + this.n2;
                 },
                 subtrair: function() {
-                    return 4 - 2;
+                    return this.n1 - this.n2;
+
                 },
-                multiplicar: () => { // arrow function
-                    return 4 * 2;
+                multiplicar: () => { //  arrow function
+                    return this.n1 * this.n2; //contexto léxico
                 },
                 dividir() { //forma enxuta de criar function
-                    return 4 / 2;
+                    return this.n1 / this.n2;
                 }
             }
         }
