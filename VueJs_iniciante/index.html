@@ -7,21 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <style>
-        .verde {
-            background-color: green;
-            
-        }
-
-        .azul {
-            background-color: blue;
-        }
-
-    </style>
     <h1>Teste</h1>
     <div id="app">
-        {{ mensagem }}
-        <input :value="2+2" :class="teste ? 'verde' : estilo ">
+        <input type="text" @keyup="imprimirTexto('enviando string', enviandoVariavel)"> <br>
+        <div>
+        <button @click="mensagemAlerta($event)">Cadastrar</button> <br>
+        </div>
     </div>
 
     <script src="./vue.js"></script>
@@ -30,11 +21,18 @@
         options = {
             el: '#app',
             data: {
-                mensagem: 'Expressão',
-                estilo: 'azul',
-                teste: true
+                enviandoVariavel: true
             },
-            methods: {}
+            methods: {
+                imprimirTexto(string, variavelBind) {
+                    console.log('recebendo string   :', string)
+                    console.log('recebendo variável :', variavelBind)
+                },
+                mensagemAlerta(e) {
+                    console.log(e)
+                }
+
+            }
         }
 
         const vm = new Vue(options) //vm = VueModel

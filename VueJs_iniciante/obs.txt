@@ -1,8 +1,12 @@
 versão Vue do curso: 2.6.12
-parei na aula: [258] -> Expressões no data binding
+parei na aula: [261] -> Diretiva V-On : Capturando dados do evento
 
 
 ________________________notas:
+
+. sintaxes enxutas:
+    . v-Bind = :
+    . v-on = @
 
 . arrow functions não são indicadas pra criação de métodos de objetos, 
     pois o (this) dentro delas, aponta pra (window) - contexto global ou para o escopo de função
