@@ -1,8 +1,15 @@
 versão Vue do curso: 2.6.12
-parei na aula: [261] -> Diretiva V-On : Capturando dados do evento
+parei na aula: [262] -> Praticando com data, methods, template string, v-bind etc
 
 
 ________________________notas:
+
+. el: ->  <elementos>
+. data: {}          ->  <variaveis reativas>
+. methods: {}       -> <métodos>
+. {{ algo }}        -> binding para com atributos da instância do Vue (data)
+. v-bind/:          -> binding para atributos de tags HTML
+. v-on/@            -> binding para manipulação de eventos
 
 . sintaxes enxutas:
     . v-Bind = :
