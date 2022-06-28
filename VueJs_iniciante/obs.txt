@@ -1,6 +1,7 @@
 versão Vue do curso: 2.6.12
-parei na aula: [262] -> Praticando com data, methods, template string, v-bind etc
-
+###
+parei na aula: [264] -> Selecionando elementos HTML pelo ID
+##
 
 ________________________notas:
 
