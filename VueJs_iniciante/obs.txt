@@ -1,11 +1,16 @@
 versão Vue do curso: 2.6.12
 ###
-parei na aula: [264] -> Selecionando elementos HTML pelo ID
+parei na aula: [267] -> Diretiva V-html: injetando elementos HTML
 ##
 
 ________________________notas:
 
-. el: ->  <elementos>
+
+. v-show:           -> renderiza mais rápido que o v-if pois está oculto no DOM. usar quando o elemento
+                            não afetar a segurança da aplicação
+                            prefira v-show se precisar alternar a visibilidade de algo com muita frequência; e prefira v-if se a condição não tem tanta probabilidade de se modificar durante a execução.
+. v-if/else:        -> só renderiza/cria os elementos no DOM se atender a condição
+. el:               ->  <elementos>
 . data: {}          ->  <variaveis reativas>
 . methods: {}       -> <métodos>
 . {{ algo }}        -> binding para com atributos da instância do Vue (data)
