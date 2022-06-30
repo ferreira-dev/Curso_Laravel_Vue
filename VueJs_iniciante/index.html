@@ -5,14 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-    </style>
 </head>
 <body>
+
     <h1>Teste</h1>
-    <div id="app">
-        <div v-html="elementosHTML">Esse conteúdo será substituido pelo V-html</div>
-    </div>
+        <div id="app" class="form-group mx-sm-3 mb-2">
+            
+            <p v-once>Saldo inicial:   {{ saldo }}</p>
+            <p>Saldo atual:   {{ saldo }}</p>
+            <input type="text" id="valor"> <br>
+            <button @click="creditar()">Creditar</button>
+            <button @click="debitar()">Debitar</button>
+
+
+
+        </div> 
+
 
     <script src="./vue.js"></script>
     <script>
@@ -20,10 +28,17 @@
         options = {
             el: '#app',
             data: {
-                elementosHTML: '<p><b>Google</b></p><a href="https://google.com">Acessar</a>'
+                saldo: 4088
             },
             methods: {
-            
+                creditar() {
+                    this.saldo += parseFloat(valor.value)
+                    valor.value = ''
+                },
+                debitar() {
+                    this.saldo -= parseFloat(valor.value)
+                    valor.value = ''
+                }
             }
         }
 

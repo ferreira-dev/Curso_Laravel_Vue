@@ -1,21 +1,21 @@
 versão Vue do curso: 2.6.12
 ###
-parei na aula: [267] -> Diretiva V-html: injetando elementos HTML
+parei na aula: [268] -> Diretiva V-once: Evitando que elementos sejam renderizados novamente
 ##
 
 ________________________notas:
 
-
+. v-once:           -> renderiza uma vez só,  Ele trata o elemento como um conteúdo estático após renderizá-lo uma vez pela primeira vez
 . v-show:           -> renderiza mais rápido que o v-if pois está oculto no DOM. usar quando o elemento
                             não afetar a segurança da aplicação
                             prefira v-show se precisar alternar a visibilidade de algo com muita frequência; e prefira v-if se a condição não tem tanta probabilidade de se modificar durante a execução.
 . v-if/else:        -> só renderiza/cria os elementos no DOM se atender a condição
 . el:               ->  <elementos>
 . data: {}          ->  <variaveis reativas>
-. methods: {}       -> <métodos>
-. {{ algo }}        -> binding para com atributos da instância do Vue (data)
+. methods: {}:       -> <métodos>
+. {{ algo }}:        -> binding para com atributos da instância do Vue (data)
 . v-bind/:          -> binding para atributos de tags HTML
-. v-on/@            -> binding para manipulação de eventos
+. v-on/@:            -> binding para manipulação de eventos
 
 . sintaxes enxutas:
     . v-Bind = :
