@@ -5,6 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+                .teste1 {
+                    border: solid 1px; border-color: red; margin-bottom:10px;
+                }
+                .teste2 {
+                    border: solid 1px; border-color: green; margin-bottom:10px;
+                }
+                .teste3 {
+                    border: solid 1px; border-color: blue; margin-bottom:10px;
+                }
+            </style>
 </head>
 <body>
 
@@ -37,6 +48,18 @@
                     </tr>
                 </tbody>
             </table>
+            <hr>
+            
+            <ul>
+                <li v-for="pub in publicacoes" :class="pub.classe" :key="pub.id">
+                    <div style="margin-left: 5px;">
+                        {{ pub.publicacao }}
+                        <hr>
+                        <input type="text"> <br><br>
+                    </div>
+                </li>
+            </ul>
+            <button @click="misturarArray()">Misturar Publicações</button> <br><br><br>
 
 
 
@@ -59,10 +82,23 @@
                         titulo: 'Fullstack Node/React',
                         descricao: 'Seja um fullstack completo'
                     }
-                }
+                },
+                publicacoes: [
+                    {id:1,publicacao: 'Conteúdo da publicação 1', classe: 'teste1'},
+                    {id:2,publicacao: 'Conteúdo da publicação 2', classe: 'teste2'},
+                    {id:3,publicacao: 'Conteúdo da publicação 3', classe: 'teste3'}
+                ]
             },
             methods: {
-                
+                misturarArray() {
+                    let misturado = []
+
+                    misturado[0] = this.publicacoes[2]
+                    misturado[1] = this.publicacoes[0]
+                    misturado[2] = this.publicacoes[1]
+
+                    this.publicacoes = misturado
+                }
             }
         }
 

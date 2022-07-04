@@ -1,7 +1,6 @@
 versão Vue do curso: 2.6.12
 ###
-parei na aula: [271] -> Diretiva V-for: Laços de repetição em tags HTML
-##
+parei na aula: [272] -> V-for com atributo key
 
 ________________________notas:
 
