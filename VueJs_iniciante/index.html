@@ -9,13 +9,34 @@
 <body>
 
     <h1>Teste</h1>
-        <div id="app" class="form-group mx-sm-3 mb-2">
-            
-            <p v-once>Saldo inicial:   {{ saldo }}</p>
-            <p>Saldo atual:   {{ saldo }}</p>
-            <input type="text" id="valor"> <br>
-            <button @click="creditar()">Creditar</button>
-            <button @click="debitar()">Debitar</button>
+        <div id="app">
+            <p>Lista de Cursos:</p>
+            <ul>
+                <li v-for="(curso, chave) in cursos">{{ chave }} - {{ curso }}</li>
+                <hr>
+                <li v-for="(curso, chave) in cursos" v-text="chave + '-' + curso"></li>
+            </ul>
+            <hr>
+            <table border="1">
+                <thead>
+                    <th>Id</th>
+                    <th>Título</th>
+                    <th>Descrição</th>
+                </thead>
+                <tbody>
+                    <tr v-for="(curso, chave) in cursos2"> 
+                        <td>{{ chave }}</td>
+                        <td>{{ curso.titulo }}</td>
+                        <td>{{ curso.descricao }}</td>
+                   
+                    <!-- destructuring assignment (ES6)-->
+                    <!-- <tr v-for="({titulo, descricao}, chave) in cursos2"> 
+                        <td>{{ chave }}</td>
+                        <td>{{ titulo }}</td>
+                        <td>{{ descricao }}</td> -->
+                    </tr>
+                </tbody>
+            </table>
 
 
 
@@ -28,17 +49,20 @@
         options = {
             el: '#app',
             data: {
-                saldo: 4088
+                cursos: ['Laravel', 'VueJs', 'ReactJS'],
+                cursos2: {
+                    1000: {
+                        titulo: 'Laravel',
+                        descricao: 'Domine o Laravel'
+                    },
+                    1001: {
+                        titulo: 'Fullstack Node/React',
+                        descricao: 'Seja um fullstack completo'
+                    }
+                }
             },
             methods: {
-                creditar() {
-                    this.saldo += parseFloat(valor.value)
-                    valor.value = ''
-                },
-                debitar() {
-                    this.saldo -= parseFloat(valor.value)
-                    valor.value = ''
-                }
+                
             }
         }
 
