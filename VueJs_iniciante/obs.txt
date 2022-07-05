@@ -1,6 +1,6 @@
 versão Vue do curso: 2.6.12
 ###
-parei na aula: [279] -> V-model: two way data binding
+parei na aula: [280] -> Watch: propriedades observadoras
 
 ________________________notas:
 
