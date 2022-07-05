@@ -6,14 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-                .teste1 {
-                    border: solid 1px; border-color: red; margin-bottom:10px;
-                }
-                .teste2 {
-                    border: solid 1px; border-color: green; margin-bottom:10px;
-                }
-                .teste3 {
-                    border: solid 1px; border-color: blue; margin-bottom:10px;
+                input {
+                    margin: 4px;
                 }
             </style>
 </head>
@@ -21,47 +15,24 @@
 
     <h1>Teste</h1>
         <div id="app">
-            <p>Lista de Cursos:</p>
-            <ul>
-                <li v-for="(curso, chave) in cursos">{{ chave }} - {{ curso }}</li>
-                <hr>
-                <li v-for="(curso, chave) in cursos" v-text="chave + '-' + curso"></li>
-            </ul>
+            <h4>Adicionar pacientes</h4>            
+            <span>Nome: </span><input type="text" id="inputNome"> <br>
+            <span>Idade: </span><input type="text" id="inputIdade"> <br>
+            <span>Plano: </span><input type="text" id="inputPlano"> <br>
+            <button @click="adicionarPaciente()">Adicionar</button>
             <hr>
-            <table border="1">
-                <thead>
-                    <th>Id</th>
-                    <th>Título</th>
-                    <th>Descrição</th>
-                </thead>
-                <tbody>
-                    <tr v-for="(curso, chave) in cursos2"> 
-                        <td>{{ chave }}</td>
-                        <td>{{ curso.titulo }}</td>
-                        <td>{{ curso.descricao }}</td>
-                   
-                    <!-- destructuring assignment (ES6)-->
-                    <!-- <tr v-for="({titulo, descricao}, chave) in cursos2"> 
-                        <td>{{ chave }}</td>
-                        <td>{{ titulo }}</td>
-                        <td>{{ descricao }}</td> -->
-                    </tr>
-                </tbody>
-            </table>
+            <h4>Último paciente cadastrado</h4>
+            <p v-if="pacientes.length > 0">
+                Paciente {{pacientes[pacientes.length -1].nome }},
+                Idade {{pacientes[pacientes.length -1].idade }},
+                Plano {{pacientes[pacientes.length -1].plano }}
+            </p>
             <hr>
-            
-            <ul>
-                <li v-for="pub in publicacoes" :class="pub.classe" :key="pub.id">
-                    <div style="margin-left: 5px;">
-                        {{ pub.publicacao }}
-                        <hr>
-                        <input type="text"> <br><br>
-                    </div>
-                </li>
-            </ul>
-            <button @click="misturarArray()">Misturar Publicações</button> <br><br><br>
-
-
+            <h4>Pacientes do plano Ouro</h4>
+            <p v-for="p in pacientes">{{p.plano === 'Ouro' ? p.nome : ''}}</p>
+            <hr>
+            <h4>Pacientes cadastrados</h4>    
+            <p v-for="p in pacientes">{{p.nome}} - {{p.idade}} anos | {{p.plano}}</p>
 
         </div> 
 
@@ -72,32 +43,18 @@
         options = {
             el: '#app',
             data: {
-                cursos: ['Laravel', 'VueJs', 'ReactJS'],
-                cursos2: {
-                    1000: {
-                        titulo: 'Laravel',
-                        descricao: 'Domine o Laravel'
-                    },
-                    1001: {
-                        titulo: 'Fullstack Node/React',
-                        descricao: 'Seja um fullstack completo'
-                    }
-                },
-                publicacoes: [
-                    {id:1,publicacao: 'Conteúdo da publicação 1', classe: 'teste1'},
-                    {id:2,publicacao: 'Conteúdo da publicação 2', classe: 'teste2'},
-                    {id:3,publicacao: 'Conteúdo da publicação 3', classe: 'teste3'}
-                ]
+                pacientes: []
             },
             methods: {
-                misturarArray() {
-                    let misturado = []
-
-                    misturado[0] = this.publicacoes[2]
-                    misturado[1] = this.publicacoes[0]
-                    misturado[2] = this.publicacoes[1]
-
-                    this.publicacoes = misturado
+                adicionarPaciente() {
+                    this.pacientes.push({
+                        nome: inputNome.value,
+                        idade: inputIdade.value,
+                        plano: inputPlano.value,
+                    })
+                    inputNome.value = ''
+                    inputIdade.value = ''
+                    inputPlano.value = ''
                 }
             }
         }
