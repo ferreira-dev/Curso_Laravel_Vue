@@ -1,9 +1,11 @@
 versão Vue do curso: 2.6.12
 ###
-parei na aula: [277] -> Propriedades computadas parte II
+parei na aula: [279] -> V-model: two way data binding
 
 ________________________notas:
 
+. Prop. computadas       -> Serve para criar lógicas complexas/extensas e exibir no template 
+                                evitando poluir o HTML e podendo ser reutilizadas.
 . <template>             -> Não renderiza no DOM
 . v-once:                -> renderiza uma vez só,  Ele trata o elemento como um conteúdo estático após renderizá-lo uma vez pela primeira vez
 . v-show:                -> renderiza mais rápido que o v-if pois está oculto no DOM. usar quando o elemento

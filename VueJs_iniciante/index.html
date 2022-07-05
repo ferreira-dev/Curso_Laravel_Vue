@@ -15,25 +15,29 @@
 
     <h1>Teste</h1>
         <div id="app">
-            <h4>Adicionar pacientes</h4>            
-            <span>Nome: </span><input type="text" id="inputNome"> <br>
-            <span>Idade: </span><input type="text" id="inputIdade"> <br>
-            <span>Plano: </span><input type="text" id="inputPlano"> <br>
-            <button @click="adicionarPaciente()">Adicionar</button>
+            <p>{{ paciente }}</p>
+            <!-- <input type="text" v-bind:value="paciente" v-on:keyup="setPaciente($event)"> -->
+            <input type="text" v-model="paciente">
             <hr>
-            <h4>Último paciente cadastrado</h4>
-            <p v-if="pacientes.length > 0">
-                Paciente {{pacientes[pacientes.length -1].nome }},
-                Idade {{pacientes[pacientes.length -1].idade }},
-                Plano {{pacientes[pacientes.length -1].plano }}
-            </p>
+            <input type="radio" value="F" v-model="sexo">Feminino
+            <input type="radio" value="M" v-model="sexo">Masculino
+            <p>{{ sexo }}</p>
             <hr>
-            <h4>Pacientes do plano Ouro</h4>
-            <p v-for="p in pacientes">{{p.plano === 'Ouro' ? p.nome : ''}}</p>
+            <select v-model="plano">
+                <option value="" disabled>Escolha seu plano</option>
+                <option value="1">Básico</option>
+                <option value="2">Premium</option>
+                <option value="3">Master</option>
+            </select> <br>
+            <span><strong>plano escolhido: </strong>{{ plano }} </span>
             <hr>
-            <h4>Pacientes cadastrados</h4>    
-            <p v-for="p in pacientes">{{p.nome}} - {{p.idade}} anos | {{p.plano}}</p>
-
+            <input type="checkbox" value="101" v-model="doencas"> Gripe
+            <input type="checkbox" value="102" v-model="doencas"> Amigdalite
+            <input type="checkbox" value="103" v-model="doencas"> Conjutivite
+            <br><strong>Doenças:</strong> {{ doencas }}
+            <hr>
+            <textarea rows="3" v-model="diagnostico" cols="40"></textarea> <br>
+            <strong>Diagnóstico: </strong> {{ diagnostico }}
         </div> 
 
 
@@ -43,19 +47,19 @@
         options = {
             el: '#app',
             data: {
-                pacientes: []
+                paciente: 'Fulano de tal',
+                sexo: '',
+                plano: '',
+                doencas: [],
+                diagnostico: ''
             },
             methods: {
-                adicionarPaciente() {
-                    this.pacientes.push({
-                        nome: inputNome.value,
-                        idade: inputIdade.value,
-                        plano: inputPlano.value,
-                    })
-                    inputNome.value = ''
-                    inputIdade.value = ''
-                    inputPlano.value = ''
+                setPaciente(e) {
+                    this.paciente = e.target.value
                 }
+            },
+            computed: {
+               
             }
         }
 
