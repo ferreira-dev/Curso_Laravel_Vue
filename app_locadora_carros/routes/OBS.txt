@@ -1,0 +1,3 @@
+# versão do Laravel: 8.5.9
+
+## parei em: [290] -> criando registros via POST
