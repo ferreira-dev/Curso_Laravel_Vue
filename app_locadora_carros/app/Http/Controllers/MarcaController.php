@@ -20,6 +20,11 @@ class MarcaController extends Controller
     public function index()
     {
         $all = $this->marca->all();
+        
+        if (count($all) < 1 ) {
+            return response()->json(['msg' => 'Ainda não há marcas cadastradas'], 200);
+        } 
+
         return response()->json($all, 200);
     }
 
@@ -31,6 +36,19 @@ class MarcaController extends Controller
      */
     public function store(Request $request)
     {
+        $regras = [
+            'nome'      => 'required|unique:marcas',
+            'imagem'    => 'required'
+        ];
+
+
+        $feedback = [
+            'required'       => 'O campo :attribute é obrigatório',
+            'nome.unique'   => 'O nome da marca já existe'
+        ];
+
+        $request->validate($regras, $feedback);
+
         $insert = $this->marca->create($request->all());
         return response()->json($insert, 201);
     }
