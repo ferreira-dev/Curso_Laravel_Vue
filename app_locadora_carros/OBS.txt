@@ -1,0 +1,27 @@
+## projeto: apis - locadora de carros
+
+#### parei na aula: [298]: Validações - Importância do Accept
+
+_________________ NOTES:
+
+## stateless
+    - cada requisição é única e independente. ela não guarda o estado.
+
+## A Importância de enviar o Accept no HEADER da requisição
+    - quando se trata de Validações no backend é preciso enviar a requisição informando no HEADER 
+        o Accept: application/json -> para receber o feedback da validação.
+
+## Status Code HTTP:
+    - 200 -> sucesso
+    - 201 -> sucesso e indica que criou um recurso.
+
+## entendendo o conceito de endpoint ( URL / URN / URI ):
+
+    - URL (Uniform Resource Locator): Host onde está o recurso.
+        ex: udemy.com | google.com.br 
+    
+    - URN (Uniform Resource Name):Recurso dentro do HOST.
+        ex: /api/vagas | /contato.php
+
+    - URI (Uniform Resource Identifier): Combinação do protocolo + URL + URN
+        ex: linkedin.com/api/vagas | site.com.br/pagina_tal

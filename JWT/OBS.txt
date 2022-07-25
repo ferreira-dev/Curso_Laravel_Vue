@@ -1,0 +1,69 @@
+####    | projeto: apis - locadora de carros
+
+######    | parei na aula: [338]: Anatomia do JWT
+
+_________________ NOTES:
+
+####    | Anatomia do JWT
+
+        - o JWT é composto por 3 partes separados por ponto '.'
+        - são elas: HEADER | PAYLOAD | SIGNATURE
+
+####    | Invalidando o JWT no logout - (revogando autorização)
+
+         - para invalidar o JWT basta implantar o método logout: auth('api')->logout();
+               fará com que expire o token, necessitando se autenticar novamente.
+
+####    | Atualizando o JWT (renovando a autorização)
+
+        - através do método: auth('api')->refresh();
+                é possível obter um novo JWT pro usuário autenticado
+                com isso a aplicação não vai precisar ficar de tempos em tempos
+                solicitando as credenciais de acesso.
+        - é necessário fazer uma requisição para esse método enviando o token antigo
+        - o novo invalida o antigo (blacklisted)
+
+####    | Recuperando dados do usuário autenticado com base no JWT
+
+         - depois de receber o JWT, é possível recuperar as informações do usuário
+            pelo HELPER: auth()->user()
+
+####    | Enviando o JWT obtido para as requisições futuras
+
+        - uma vez autorizado e recebido o token, o CLIENT é responsável por guardar o token
+            para requisições futuras.
+        - é preciso enviar o token no HEADER da requisição com a palavra 'Bearer' antes do token
+        - o token pode ter limite de quantidade de requisições
+        - o token pode ter tempo de expiração
+
+####    | protegendo rotas por JWT
+
+        - é preciso configurar e aplicar um middleware jwt nas rotas desejadas
+            para que só seja possível acessar após autenticação (login/senha)+ autorização JWT
+
+####    | stateless
+
+         - cada requisição é única e independente. ela não guarda o estado.
+
+####    | A Importância de enviar o Accept no HEADER da requisição
+
+        - quando se trata de Validações no backend é preciso enviar a requisição informando no HEADER 
+            o Accept: application/json -> para receber o feedback da validação.
+
+####    | Status Code HTTP:
+
+        - 200 -> sucesso
+        - 201 -> sucesso e indica que criou um recurso.
+        - 401 -> logado, mas não autorizado.
+        - 403 -> proibido ( login inválido )
+
+####    | entendendo o conceito de endpoint ( URL / URN / URI ):
+
+        - URL (Uniform Resource Locator): Host onde está o recurso.
+            ex: udemy.com | google.com.br 
+        
+        - URN (Uniform Resource Name):Recurso dentro do HOST.
+            ex: /api/vagas | /contato.php
+
+        - URI (Uniform Resource Identifier): Combinação do protocolo + URL + URN
+            ex: linkedin.com/api/vagas | site.com.br/pagina_tal
