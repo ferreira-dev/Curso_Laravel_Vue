@@ -1,2 +1,3 @@
 - parei na
-    SEÇÃO_7: [avançando com controllers] -> 51 - Blade @switch/case
+    SEÇÃO_7: [avançando com controllers] -> 
+            63 - Blade - Template com @extends | @section | @yield parte II
