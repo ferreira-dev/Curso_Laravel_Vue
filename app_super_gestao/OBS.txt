@@ -1,4 +1,4 @@
 - parei na
-    SEÇÃO_7: [avançando com controllers] -> 
-            69 - Blade - @component
+    SEÇÃO_8: [Models, Migrations, Seeders, Eloquent etc] -> 
+            81 - Migration: Criando e executando a Migration Fornecedores
 
